@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reptile Explorer | Beta</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span aria-hidden="true">&#129422;</span> Reptile Explorer</a>
+      <span class="beta-label">Beta draft</span>
+      <div class="nav-links">
+        <a class="active" href="index.html">Browse</a>
+        <a href="search.html">Search</a>
+      </div>
+    </nav>
+    <div class="hero">
+      <div class="container">
+        <p class="eyebrow">FIELD NOTES / 001</p>
+        <h1>Discover the world of reptiles</h1>
+        <p class="tagline">A growing guide to the species, habitats, and conservation stories of reptiles around the world.</p>
+        <form class="search-form" action="search.html" method="get" role="search">
+          <input type="search" name="q" placeholder="Search reptiles..." aria-label="Search reptiles" required>
+          <button type="submit">Search</button>
+        </form>
+        <div class="category-filters" aria-label="Reptile groups">
+          <a class="chip active" href="#species-directory">All</a>
+          <a class="chip" href="#snakes">Snakes</a>
+          <a class="chip" href="#lizards">Lizards</a>
+          <a class="chip" href="#turtles">Turtles</a>
+          <a class="chip" href="#crocodilians">Crocodilians</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" id="featured-section" aria-labelledby="featured-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">A FIRST LOOK</p>
+          <h2 id="featured-heading">Featured reptiles</h2>
+        </div>
+        <span class="coming-soon">Local sample</span>
+      </div>
+      <a class="featured-card" href="details.html">
+        <span class="featured-icon" aria-hidden="true">&#128034;</span>
+        <span class="featured-copy">
+          <span class="eyebrow">SPECIES SPOTLIGHT</span>
+          <h3>Featured species</h3>
+          <p>Short introduction and featured image will go here.</p>
+        </span>
+      </a>
+    </section>
+
+    <section class="section species-section" id="species-directory" aria-labelledby="species-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">BROWSE THE COLLECTION</p>
+          <h2 id="species-heading">Species directory</h2>
+        </div>
+        <span class="muted">Sample cards</span>
+      </div>
+      <div class="card-grid">
+        <a class="species-card" id="snakes" href="details.html">
+          <span class="card-image" aria-hidden="true"><span>&#128013;</span></span>
+          <span class="card-copy"><h3>Snake species</h3><span class="scientific-name">Scientific name</span><span class="card-category">Snake</span></span>
+        </a>
+        <a class="species-card" id="lizards" href="details.html">
+          <span class="card-image" aria-hidden="true"><span>&#129422;</span></span>
+          <span class="card-copy"><h3>Lizard species</h3><span class="scientific-name">Scientific name</span><span class="card-category">Lizard</span></span>
+        </a>
+        <a class="species-card" id="turtles" href="details.html">
+          <span class="card-image" aria-hidden="true"><span>&#128034;</span></span>
+          <span class="card-copy"><h3>Turtle species</h3><span class="scientific-name">Scientific name</span><span class="card-category">Turtle</span></span>
+        </a>
+        <a class="species-card" id="crocodilians" href="details.html">
+          <span class="card-image" aria-hidden="true"><span>&#128010;</span></span>
+          <span class="card-copy"><h3>Crocodilian species</h3><span class="scientific-name">Scientific name</span><span class="card-category">Crocodilian</span></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><span>Reptile Explorer</span><span>Beta draft · Sample data stored locally</span></div>
+  </footer>
+</body>
+</html>

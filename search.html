@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search | Reptile Explorer Beta</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span aria-hidden="true">&#129422;</span> Reptile Explorer</a>
+      <span class="beta-label">Beta draft</span>
+      <div class="nav-links"><a href="index.html">Browse</a><a class="active" href="search.html">Search</a></div>
+    </nav>
+    <div class="hero">
+      <div class="container">
+        <p class="eyebrow">SPECIES DIRECTORY</p>
+        <h1>Search reptiles</h1>
+        <p class="tagline">Search by common name, scientific name, or group.</p>
+        <form class="search-form" action="search.html" method="get" role="search">
+          <input type="search" name="q" placeholder="Search reptiles..." aria-label="Search reptiles" required>
+          <button type="submit">Search</button>
+        </form>
+        <div class="category-filters" aria-label="Reptile groups">
+          <a class="chip active" href="search.html">All</a>
+          <a class="chip" href="search.html?group=snakes">Snakes</a>
+          <a class="chip" href="search.html?group=lizards">Lizards</a>
+          <a class="chip" href="search.html?group=turtles">Turtles</a>
+          <a class="chip" href="search.html?group=crocodilians">Crocodilians</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section species-section" aria-labelledby="results-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow">SEARCH RESULTS</p><h2 id="results-heading">Matching species</h2></div>
+        <span class="muted">Sample results</span>
+      </div>
+      <div class="card-grid">
+        <a class="species-card" href="details.html">
+          <span class="card-image" aria-hidden="true"><span>&#128013;</span></span>
+          <span class="card-copy"><h3>Snake species</h3><span class="scientific-name">Scientific name</span><span class="card-category">Snake</span></span>
+        </a>
+        <a class="species-card" href="details.html">
+          <span class="card-image" aria-hidden="true"><span>&#129422;</span></span>
+          <span class="card-copy"><h3>Lizard species</h3><span class="scientific-name">Scientific name</span><span class="card-category">Lizard</span></span>
+        </a>
+        <a class="species-card" href="details.html">
+          <span class="card-image" aria-hidden="true"><span>&#128034;</span></span>
+          <span class="card-copy"><h3>Turtle species</h3><span class="scientific-name">Scientific name</span><span class="card-category">Turtle</span></span>
+        </a>
+      </div>
+      <p class="muted prototype-note">Search controls and result cards are layout placeholders; result filtering is not connected yet.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><span>Reptile Explorer</span><span>Beta draft · No API or scripts connected</span></div></footer>
+</body>
+</html>
