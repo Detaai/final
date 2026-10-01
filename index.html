@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reptile Explorer</title>
+<meta name="description" content="Discover reptiles from around the world — their habitats, native ranges, conservation status, and what it means to keep them as pets.">
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-bar">
+    <a href="#/browse" class="brand"><span class="logo-emoji">🦎</span> Reptile Explorer</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav-links">
+      <a href="#/browse" data-route="browse">Home / Browse</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <div class="container">
+      <h1>Discover the World of Reptiles</h1>
+      <p class="tagline">Search hundreds of species to learn where they live, what habitats
+        they depend on, their conservation status, and what it means to keep them as pets.</p>
+
+      <form id="search-form" class="search-form" role="search">
+        <input id="search-input" type="search" name="q" placeholder="Search reptiles (e.g. gecko, python, tortoise)…" aria-label="Search reptiles">
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="category-filters" role="group" aria-label="Filter by reptile group">
+        <button class="chip active" data-category="all">All</button>
+        <button class="chip" data-category="snakes">Snakes</button>
+        <button class="chip" data-category="lizards">Lizards</button>
+        <button class="chip" data-category="turtles">Turtles &amp; Tortoises</button>
+        <button class="chip" data-category="crocodilians">Crocodilians</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== Browse view ===== -->
+  <section id="view-browse" class="container">
+    <div class="section">
+      <h2>Featured Reptiles</h2>
+      <div id="carousel" class="carousel"></div>
+    </div>
+    <div class="section">
+      <h2 id="browse-heading">All Reptiles</h2>
+      <div id="browse-grid" class="card-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Search results view ===== -->
+  <section id="view-search" class="container" hidden>
+    <div class="section">
+      <p id="results-heading" class="results-heading"></p>
+      <div id="search-grid" class="card-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Details view ===== -->
+  <section id="view-details" hidden>
+    <div class="details-hero">
+      <div class="container">
+        <div class="details-grid">
+          <div class="detail-image-slot"></div>
+          <div class="detail-heading" id="detail-hero"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="detail-info" class="info-cards"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Reptile Explorer is an educational project. Species images, names, and taxonomy from
+      <a href="https://www.inaturalist.org/" target="_blank" rel="noopener">iNaturalist</a>.
+      Range/occurrence data from <a href="https://www.gbif.org/" target="_blank" rel="noopener">GBIF</a>.
+      Always verify local laws before acquiring any reptile as a pet.</p>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/search.js"></script>
+<script src="js/display.js"></script>
+<script src="js/details.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
