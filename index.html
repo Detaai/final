@@ -1,92 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reptile Explorer | Beta</title>
-  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reptile Explorer</title>
+<meta name="description" content="Discover reptiles from around the world — their habitats, native ranges, conservation status, and what it means to keep them as pets.">
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav-bar" aria-label="Main navigation">
-      <a class="brand" href="index.html"><span aria-hidden="true">&#129422;</span> Reptile Explorer</a>
-      <span class="beta-label">Beta draft</span>
-      <div class="nav-links">
-        <a class="active" href="index.html">Browse</a>
-        <a href="search.html">Search</a>
-      </div>
+
+<header class="site-header">
+  <div class="nav-bar">
+    <a href="#/browse" class="brand"><span class="logo-emoji">🦎</span><span>Reptile <b>Explorer</b></span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#/browse" data-route="browse">Explore species <span aria-hidden="true">↗</span></a>
     </nav>
-    <div class="hero">
+  </div>
+
+  <div class="hero">
+    <div class="container">
+      <p class="eyebrow"><span></span> A LIVING FIELD GUIDE · REPTILIA</p>
+      <h1>A field guide to<br><em>the wild.</em></h1>
+      <p class="tagline">Get closer to the remarkable reptiles that share our planet. Explore their habitats, discover their stories, and see what it takes to protect them.</p>
+
+      <form id="search-form" class="search-form" role="search">
+        <input id="search-input" type="search" name="q" placeholder="Search reptiles (e.g. gecko, python, tortoise)…" aria-label="Search reptiles">
+        <button type="submit">Find a species <span aria-hidden="true">↗</span></button>
+      </form>
+
+      <div class="category-filters" role="group" aria-label="Filter by reptile group">
+        <span class="filter-label">EXPLORE BY GROUP</span>
+        <button class="chip active" data-category="all">All species</button>
+        <button class="chip" data-category="snakes">Snakes</button>
+        <button class="chip" data-category="lizards">Lizards</button>
+        <button class="chip" data-category="turtles">Turtles &amp; Tortoises</button>
+        <button class="chip" data-category="crocodilians">Crocodilians</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== Browse view ===== -->
+  <section id="view-browse" class="container">
+    <div class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">IN THE SPOTLIGHT</p>
+          <h2>Meet a few locals</h2>
+        </div>
+        <span class="section-aside">01 <i>/</i> FEATURED SPECIES</span>
+      </div>
+      <div id="carousel" class="carousel"></div>
+    </div>
+    <div class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2 id="browse-heading">All Reptiles</h2>
+        </div>
+        <span class="section-aside">FIELD NOTES, ORGANIZED BY SPECIES</span>
+      </div>
+      <div id="browse-grid" class="card-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Search results view ===== -->
+  <section id="view-search" class="container" hidden>
+    <div class="section">
+      <p class="eyebrow">SPECIES INDEX</p>
+      <p id="results-heading" class="results-heading"></p>
+      <div id="search-grid" class="card-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Details view ===== -->
+  <section id="view-details" hidden>
+    <div class="details-hero">
       <div class="container">
-        <p class="eyebrow">FIELD NOTES / 001</p>
-        <h1>Discover the world of reptiles</h1>
-        <p class="tagline">A growing guide to the species, habitats, and conservation stories of reptiles around the world.</p>
-        <form class="search-form" action="search.html" method="get" role="search">
-          <input type="search" name="q" placeholder="Search reptiles..." aria-label="Search reptiles" required>
-          <button type="submit">Search</button>
-        </form>
-        <div class="category-filters" aria-label="Reptile groups">
-          <a class="chip active" href="#species-directory">All</a>
-          <a class="chip" href="#snakes">Snakes</a>
-          <a class="chip" href="#lizards">Lizards</a>
-          <a class="chip" href="#turtles">Turtles</a>
-          <a class="chip" href="#crocodilians">Crocodilians</a>
+        <div class="details-grid">
+          <div class="detail-image-slot"></div>
+          <div class="detail-heading" id="detail-hero"></div>
         </div>
       </div>
     </div>
-  </header>
+    <div class="container">
+      <div id="detail-info" class="info-cards"></div>
+    </div>
+  </section>
 
-  <main class="container">
-    <section class="section" id="featured-section" aria-labelledby="featured-heading">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">A FIRST LOOK</p>
-          <h2 id="featured-heading">Featured reptiles</h2>
-        </div>
-        <span class="coming-soon">Local sample</span>
-      </div>
-      <a class="featured-card" href="details.html">
-        <span class="featured-icon" aria-hidden="true">&#128034;</span>
-        <span class="featured-copy">
-          <span class="eyebrow">SPECIES SPOTLIGHT</span>
-          <h3>Featured species</h3>
-          <p>Short introduction and featured image will go here.</p>
-        </span>
-      </a>
-    </section>
+</main>
 
-    <section class="section species-section" id="species-directory" aria-labelledby="species-heading">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">BROWSE THE COLLECTION</p>
-          <h2 id="species-heading">Species directory</h2>
-        </div>
-        <span class="muted">Sample cards</span>
-      </div>
-      <div class="card-grid">
-        <a class="species-card" id="snakes" href="details.html">
-          <span class="card-image" aria-hidden="true"><span>&#128013;</span></span>
-          <span class="card-copy"><h3>Snake species</h3><span class="scientific-name">Scientific name</span><span class="card-category">Snake</span></span>
-        </a>
-        <a class="species-card" id="lizards" href="details.html">
-          <span class="card-image" aria-hidden="true"><span>&#129422;</span></span>
-          <span class="card-copy"><h3>Lizard species</h3><span class="scientific-name">Scientific name</span><span class="card-category">Lizard</span></span>
-        </a>
-        <a class="species-card" id="turtles" href="details.html">
-          <span class="card-image" aria-hidden="true"><span>&#128034;</span></span>
-          <span class="card-copy"><h3>Turtle species</h3><span class="scientific-name">Scientific name</span><span class="card-category">Turtle</span></span>
-        </a>
-        <a class="species-card" id="crocodilians" href="details.html">
-          <span class="card-image" aria-hidden="true"><span>&#128010;</span></span>
-          <span class="card-copy"><h3>Crocodilian species</h3><span class="scientific-name">Scientific name</span><span class="card-category">Crocodilian</span></span>
-        </a>
-      </div>
-    </section>
-  </main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand"><span class="logo-emoji" aria-hidden="true">🦎</span><span>Reptile <b>Explorer</b></span></div>
+    <p>A field guide to the scaled, secretive, and spectacular.</p>
+    <p class="footer-note">Species data &amp; imagery: <a href="https://www.inaturalist.org/" target="_blank" rel="noopener">iNaturalist</a> · Occurrence data: <a href="https://www.gbif.org/" target="_blank" rel="noopener">GBIF</a><br>Always verify local laws before acquiring any reptile as a pet.</p>
+  </div>
+</footer>
 
-  <footer class="site-footer">
-    <div class="container"><span>Reptile Explorer</span><span>Beta draft · Sample data stored locally</span></div>
-  </footer>
+<script src="js/api.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/search.js"></script>
+<script src="js/display.js"></script>
+<script src="js/details.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
